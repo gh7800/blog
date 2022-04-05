@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.add');
 });
 
 //添加用户路由
-Route::get('user/add', 'UserController@add');
+Route::get('user/add', [UserController::class,'add']);
 
 //执行添加用户路由
 Route::post('user/store', 'UserController@store');
