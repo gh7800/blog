@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.add');
-});
+Route::view('/', 'welcome');
 
 //添加用户路由
 Route::get('user/add', [UserController::class,'add']);
 
 //执行添加用户路由
-Route::post('user/store', 'UserController@store');
+Route::post('user/store', [UserController::class,'store']);
+
+//用户列表页
+Route::get('user/index', [UserController::class,'index']);

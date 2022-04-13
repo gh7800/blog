@@ -12,16 +12,23 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    //关联数据表
+    protected $table = 'user';
+    //主键
+    protected $primaryKey = 'id';
+
     /**
      * The attributes that are mass assignable.
-     *
+     * 可批量操作的字段
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'username',
         'password',
     ];
+
+    //禁用时间戳
+    public $timestamps = false;
 
     /**
      * The attributes that should be hidden for serialization.

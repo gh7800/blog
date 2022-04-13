@@ -8,7 +8,9 @@
 </head>
 
 <body >
-<form action="{{url("user/store")}}" method="post">
+
+<form action="{{url("/user/store")}}" method="post">
+    @csrf
     <table>
         <tr>
             <td>用户名</td>
