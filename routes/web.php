@@ -24,3 +24,9 @@ Route::post('user/store', [UserController::class,'store']);
 
 //用户列表页
 Route::get('user/index', [UserController::class,'index']);
+
+//用户修改页面
+Route::get('user/edit/{id}',[UserController::class,'edit']);
+
+//用户提交修改
+Route::post('user/update',[UserController::class,'update']);

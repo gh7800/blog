@@ -29,7 +29,29 @@ class UserController extends Controller
 
     //用户列表
     public function index(){
-        $user = User::all();
+        $user = User::all();//获取所有user
         return view('user.index',compact('user'));
     }
+
+    //用户修改页面
+    public function edit($id){
+        $user = User::find($id);//查询用户
+        return view('user.edit',compact('user'));
+    }
+
+    //用户提交修改
+    public function update(Request $request){
+        $res = $request->all();
+//        $id = $res['id'];
+        $user = User::find($res['id']);
+        //$user['username'] = $res['username'];
+        $result = $user->update(['username'=>$res['username']]);
+        if($result){
+            return redirect('user/index');
+        }else{
+            back();
+        }
+        //dd($request->all());
+    }
+
 }
