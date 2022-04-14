@@ -42,16 +42,23 @@ class UserController extends Controller
     //用户提交修改
     public function update(Request $request){
         $res = $request->all();
-//        $id = $res['id'];
         $user = User::find($res['id']);
-        //$user['username'] = $res['username'];
         $result = $user->update(['username'=>$res['username']]);
         if($result){
             return redirect('user/index');
         }else{
-            back();
+            return back();
         }
-        //dd($request->all());
+    }
+
+    public function delete($id){
+        $user = User::find($id);
+        $result = $user->delete();
+        if($result){
+            return redirect('user/index');
+        }else{
+            return back();
+        }
     }
 
 }
