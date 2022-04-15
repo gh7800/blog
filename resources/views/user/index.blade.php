@@ -8,40 +8,46 @@
 
     <script src="../../js/layui/css/layui.css"></script>
     <script src="../../js/layui/layui.js"></script>
+
 </head>
 
 <body>
 
-<form>
-    @csrf
-    <table>
+<table>
+    <tr>
+        <td>id</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>操作</td>
+    </tr>
+    @foreach($user as $v)
         <tr>
-            <td>id</td>
-            <td>用户名</td>
-            <td>密码</td>
-            <td>操作</td>
+            <td>{{$v->id}}</td>
+            <td>{{$v->username}}</td>
+            <td>{{$v->password}}</td>
+            <td><a href="/user/edit/{{$v->id}}">修改</a>|<a href="javascript:;" onclick="deleteUser()">删除</a></td>
         </tr>
-        @foreach($user as $v)
-            <tr>
-                <td>{{$v->id}}</td>
-                <td>{{$v->username}}</td>
-                <td>{{$v->password}}</td>
-                <td><a href="/user/edit/{{$v->id}}">修改</a>|<a href="javascript:;" onclick="deleteUser()">删除</a></td>
-            </tr>
-        @endforeach
-    </table>
+    @endforeach
     <style>
         table, tr, td {
             border: 1px solid black;
         }
     </style>
 
-    <script>
-        function deleteUser() {
-            layer.alert('------')
-        }
-    </script>
-</form>
+</table>
+<script>
+    function deleteUser() {
+        layer.confirm('提示', {
+            btn: ['确定', '取消'],
+            function() {
+
+            },
+            function() {
+
+            },
+        })
+    }
+</script>
 
 </body>
 
