@@ -8,7 +8,9 @@
 
     <script src="../../js/layui/css/layui.css"></script>
     <script src="../../js/layui/layui.js"></script>
+
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+{{--    <script src="public/js/app.js"></script>--}}
 {{--    <script src="node_modules/jquery/src/jquery.js"></script>--}}
 
 </head>
