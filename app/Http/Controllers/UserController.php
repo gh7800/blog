@@ -51,14 +51,22 @@ class UserController extends Controller
         }
     }
 
-    public function delete($id){
+    //删除user
+    public function del($id){
         $user = User::find($id);
         $result = $user->delete();
         if($result){
-            return redirect('user/index');
+            $data = [
+              'status' => 0,
+              'message' => '成功'
+            ];
         }else{
-            return back();
+            $data = [
+                'status' => -1,
+                'message' => '删除失败'
+            ];
         }
+        return $data;
     }
 
 }

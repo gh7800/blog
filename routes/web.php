@@ -30,3 +30,6 @@ Route::get('user/edit/{id}',[UserController::class,'edit']);
 
 //用户提交修改
 Route::post('user/update',[UserController::class,'update']);
+
+//用户删除路由
+Route::get('user/del/{id}',[UserController::class,'del']);
