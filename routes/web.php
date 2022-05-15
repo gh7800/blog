@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,12 @@ Route::post('user/update',[UserController::class,'update']);
 
 //用户删除路由
 Route::get('user/del/{id}',[UserController::class,'del']);
+
+//登录页面
+Route::get('login',[UserController::class,'loginPage']);
+
+//登录路由事件
+Route::post('user/loginStore',[UserController::class,'loginStore']);
+
+//首页
+Route::get('home',[HomeController::class,'homePage']);
