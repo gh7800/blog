@@ -12,24 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .vue()
     .postCss('resources/css/app.css', 'public/css', [
-        //
+        // ['vue','axios']
     ]);
 
-// const { VueLoaderPlugin } = require('vue-loader')
-//
-// module.exports = {
-//     module: {
-//         rules: [
-//             // ... 其它规则
-//             {
-//                 test: /\.vue$/,
-//                 loader: 'vue-loader'
-//             }
-//         ]
-//     },
-//     plugins: [
-//         // 请确保引入这个插件！
-//         new VueLoaderPlugin()
-//     ]
-// }

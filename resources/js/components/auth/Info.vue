@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="">vue info</div>
-
+        <el-button>info---</el-button>
     </div>
 </template>
 

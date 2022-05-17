@@ -1,8 +1,8 @@
 
 <template>
-    <div class="">
-
-        <div class="">vye login</div>
+    <div >
+        <div class="">vue login</div>
+        <el-button>login---</el-button>
         <router-link to="/authuserinfo">info</router-link>
     </div>
 </template>
@@ -16,7 +16,7 @@ export default {
         }
     },
     mounted() {
-        this.getResult()
+        //this.getResult()
     },
     methods: {
         getResult() {

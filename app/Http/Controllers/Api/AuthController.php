@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller as ApiController;
 
-class AuthController extends Controller
+class AuthController extends ApiController
 {
 
     public function login(): array
