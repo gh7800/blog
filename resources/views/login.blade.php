@@ -6,12 +6,12 @@
     @csrf
     <label>
         <span>账号：</span>
-        <input type="text" name="username" placeholder="请输入账号..."/>
+        <input type="text" name="username" placeholder="请输入账号..."></input>
     </label>
     <br>
     <label>
         <span>密码：</span>
-        <input type="password" name="password" placeholder="请输入密码..."/>
+        <input type="password" name="password" placeholder="请输入密码..."></input>
     </label>
 
     <label>
