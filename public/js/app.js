@@ -3839,11 +3839,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
-      console.log(this.loginForm);
+      //console.log(this.loginForm)
       var param = new URLSearchParams();
       param.append('username', this.loginForm.username);
       param.append('password', this.loginForm.password);
-      this.$axios.post('/api/login', param).then(function (response) {
+      this.$axios.post('/api/login', this.loginForm).then(function (response) {
         console.log(response); // this.$router.replace('authuserinfo')
       })["catch"](function (error) {
         console.log(error);

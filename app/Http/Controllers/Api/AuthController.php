@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends ApiController
 {
-
     public function login(Request $request): array
     {
-        $input = $request->except('_token');
+//        $input = $request->except('_token');
+        $username = $request->input('username');
+        $password = $request->input('password');
 
 //        $username = $request['username'];
 //        $password = $request['password'];
@@ -31,11 +32,11 @@ class AuthController extends ApiController
             'password.required' => '密码必须输入',
             'password.between' => '密码长度4-18位',
         ];
-        $validator = Validator::make($input, $rule,$err);
+        $validator = Validator::make([$username,$password], $rule,$err);
 
         if($validator->fails()) {
             return [
-                'data' => $request,
+                'data' => $username,
                 'success' => false,
                 'message' => $err
             ];

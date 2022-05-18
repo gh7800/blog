@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
@@ -50,3 +51,5 @@ Route::view('/index','index');
 
 //vue
 Route::get('/{any}', [IndexController::class,'index'])->where('any', '.*');
+
+//Route::post('api/login', [AuthController::class,'login']);

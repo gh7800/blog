@@ -36,14 +36,14 @@ export default {
     },
     methods: {
         login() {
-            console.log(this.loginForm)
+            //console.log(this.loginForm)
             const param = new URLSearchParams();
             param.append('username',this.loginForm.username);
             param.append('password',this.loginForm.password);
 
-            this.$axios.post('/api/login',param).then(response => {
+            this.$axios.post('/api/login', this.loginForm).then(response => {
                 console.log(response)
-               // this.$router.replace('authuserinfo')
+                // this.$router.replace('authuserinfo')
             }).catch(error => {
                 console.log(error)
             })

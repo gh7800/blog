@@ -10,7 +10,8 @@
         "production": "mix --production"
     },
     "dependencies": {
-        "element-ui": "^2.15.8"
+        "element-ui": "^2.15.8",
+        "qs": "^6.10.3"
     },
     "devDependencies": {
         "axios": "^0.21",
