@@ -42,10 +42,12 @@ export default {
             param.append('password',this.loginForm.password);
 
             this.$axios.post('/api/login', this.loginForm).then(response => {
-                console.log(response)
+                console.log(response.data)
+                // alert(response.data.message)
                 // this.$router.replace('authuserinfo')
             }).catch(error => {
-                console.log(error)
+                //console.log(error.data.message)
+                // alert(error.data.message)
             })
 
             // this.loading = false

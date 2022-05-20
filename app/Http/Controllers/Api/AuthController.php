@@ -11,38 +11,36 @@ class AuthController extends ApiController
 {
     public function login(Request $request): array
     {
-//        $input = $request->except('_token');
-        $username = $request->input('username');
-        $password = $request->input('password');
-
-//        $username = $request['username'];
-//        $password = $request['password'];
-//        $user = User::find($username);
-//        dd($username);
-
-        //验证规则
-        $rule = [
+        $data = $request->all();
+        $rules = [
             'username' => 'required|between:4,18',
             'password' => 'required|between:4,18|alpha_dash'
         ];
-        //错误信息
-        $err = [
-            'username.required' => '用户名必须输入',
-            'username.between' => '用户名长度4-18位',
-            'password.required' => '密码必须输入',
-            'password.between' => '密码长度4-18位',
+        $messages = [
+            'username.required' => ':attribute 必须输入',
+            'username.between' => ':attribute 长度4-18位',
+            'password.required' => ':attribute 必须输入',
+            'password.between' => ':attribute 长度4-18位',
         ];
-        $validator = Validator::make([$username,$password], $rule,$err);
+        $customAttribute = [
+            'username' => '用户名',
+            'password' => '密码'
+        ];
+        //验证规则
+        $validator = Validator::make($data, $rules, $messages, $customAttribute);
 
-        if($validator->fails()) {
+        $errors = $validator->errors();
+
+        if ($validator->fails()) {
+            $msg = $errors->first('username') ?: $errors->first('password');
             return [
-                'data' => $username,
+                'data' => null,
                 'success' => false,
-                'message' => $err
+                'message' => $msg
             ];
-        }else{
+        } else {
             return [
-                'data' => 'login',
+                'data' => null,
                 'success' => true,
                 'message' => '登录成功'
             ];
