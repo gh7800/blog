@@ -3877,12 +3877,163 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _assets_2_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../assets/2.jpg */ "./resources/assets/2.jpg");
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Home"
+  name: "Home",
+  data: function data() {
+    return {
+      isCollapse: true,
+      header: __webpack_require__(/*! ../../../assets/2.jpg */ "./resources/assets/2.jpg")
+    };
+  },
+  methods: {
+    avatarClick: function avatarClick() {
+      this.$message.success("OK");
+    },
+    handleOpen: function handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+      return true;
+    },
+    handleClose: function handleClose(key, keyPath) {
+      console.log(key, keyPath);
+      return false;
+    },
+    setHide: function setHide() {
+      isCollapse = !isCollapse;
+    },
+    collapseStatus: function collapseStatus() {
+      this.collapseBtnClick = this.isCollapse;
+      this.isCollapse = !this.isCollapse;
+    }
+  },
+  comments: {// Hamburger
+    // UserList,
+  }
 });
 
 /***/ }),
@@ -64447,6 +64598,36 @@ exports["default"] = {
 
 /***/ }),
 
+/***/ "./resources/assets/2.jpg":
+/*!********************************!*\
+  !*** ./resources/assets/2.jpg ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/2.jpg?ca2bb30826281fa2b2cb7ef2e91848f2");
+
+/***/ }),
+
+/***/ "./resources/assets/logo.png":
+/*!***********************************!*\
+  !*** ./resources/assets/logo.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logo.png?26bd867dd65e26dbc77d1e151ffd36e0");
+
+/***/ }),
+
 /***/ "./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.ttf":
 /*!*************************************************************************!*\
   !*** ./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.ttf ***!
@@ -97453,7 +97634,295 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    { staticClass: "main", staticStyle: { height: "100vh" } },
+    [
+      _c(
+        "el-container",
+        {
+          staticStyle: {
+            background: "#f2f2f2",
+            width: "100%",
+            height: "100%",
+            padding: "0",
+            "align-content": "flex-start",
+          },
+          attrs: { direction: "horizontal" },
+        },
+        [
+          _c(
+            "el-aside",
+            {
+              staticStyle: {
+                width: "auto",
+                height: "100%",
+                padding: "0",
+                "overflow-y": "hidden",
+              },
+              attrs: { display: "block" },
+              nativeOn: {
+                mouseenter: function ($event) {
+                  return _vm.handleOpen.apply(null, arguments)
+                },
+                mouseleave: function ($event) {
+                  return _vm.handleClose.apply(null, arguments)
+                },
+              },
+            },
+            [
+              _c(
+                "el-menu",
+                {
+                  staticStyle: { height: "100%", padding: "0", width: "auto" },
+                  attrs: {
+                    router: "",
+                    "background-color": "#545c64",
+                    "active-text-color": "#ffd04b",
+                    "text-color": "#fff",
+                    collapse: _vm.isCollapse,
+                  },
+                },
+                [
+                  _c("el-image", {
+                    staticStyle: { width: "auto", height: "75px", margin: "0" },
+                    attrs: { src: __webpack_require__(/*! ../../../assets/logo.png */ "./resources/assets/logo.png") },
+                    model: {
+                      value: _vm.isCollapse,
+                      callback: function ($$v) {
+                        _vm.isCollapse = $$v
+                      },
+                      expression: "isCollapse",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "el-submenu",
+                    { attrs: { index: "1" } },
+                    [
+                      _c(
+                        "template",
+                        { staticStyle: { padding: "0" }, slot: "title" },
+                        [
+                          _c("i", { staticClass: "el-icon-edit" }),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("公文管理")]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "addUser" } }, [
+                        _vm._v("我的请示"),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "UserList" } }, [
+                        _vm._v("收文管理"),
+                      ]),
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-submenu",
+                    { attrs: { index: "2" } },
+                    [
+                      _c("template", { slot: "title" }, [
+                        _c("i", { staticClass: "el-icon-magic-stick" }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("用车管理")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "about" } }, [
+                        _vm._v("我的用车"),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", { attrs: { index: "main" } }, [
+                        _vm._v("用车审批"),
+                      ]),
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-submenu",
+                    { attrs: { index: "3" } },
+                    [
+                      _c("template", { slot: "title" }, [
+                        _c("i", { staticClass: "el-icon-location" }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("会议管理")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("我的会议")]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("会议审批")]),
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-submenu",
+                    { attrs: { index: "4" } },
+                    [
+                      _c("template", { slot: "title" }, [
+                        _c("i", { staticClass: "el-icon-edit" }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("资产管理")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("固定资产")]),
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-submenu",
+                    { attrs: { index: "5" } },
+                    [
+                      _c("template", { slot: "title" }, [
+                        _c("i", { staticClass: "el-icon-edit" }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("通知管理")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("收到通知")]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("发送通知")]),
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-submenu",
+                    { attrs: { index: "6" } },
+                    [
+                      _c("template", { slot: "title" }, [
+                        _c("i", { staticClass: "el-icon-edit" }),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("系统设置")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("用户管理")]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("App管理")]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("角色权限管理")]),
+                      _vm._v(" "),
+                      _c("el-menu-item", [_vm._v("个人信息")]),
+                    ],
+                    2
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "el-main",
+            { staticStyle: { "background-color": "white", padding: "0" } },
+            [
+              _c(
+                "el-container",
+                { staticClass: "el-container" },
+                [
+                  _c(
+                    "el-row",
+                    {
+                      staticStyle: {
+                        "background-color": "gray",
+                        width: "100%",
+                        height: "75px",
+                      },
+                      attrs: { type: "flex", justify: "space-between" },
+                    },
+                    [
+                      _c(
+                        "el-row",
+                        {
+                          staticStyle: { height: "100%" },
+                          attrs: {
+                            type: "flex",
+                            align: "middle",
+                            justify: "start",
+                          },
+                        },
+                        [
+                          _c(
+                            "el-button",
+                            { on: { click: _vm.collapseStatus } },
+                            [
+                              _c("i", {
+                                staticClass: "el-icon-menu",
+                                staticStyle: { "padding-left": "10px" },
+                              }),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticStyle: { width: "130px" } }, [
+                            _vm._v("移动办公系统"),
+                          ]),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-row",
+                        {
+                          staticClass: "row-bg",
+                          attrs: {
+                            type: "flex",
+                            justify: "space-between",
+                            align: "middle",
+                          },
+                        },
+                        [
+                          _c(
+                            "el-row",
+                            {
+                              attrs: {
+                                align: "middle",
+                                justify: "center",
+                                type: "flex",
+                              },
+                            },
+                            [
+                              _c("el-avatar", {
+                                on: { click: _vm.avatarClick },
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                {
+                                  staticStyle: {
+                                    "padding-right": "16px",
+                                    "padding-left": "10px",
+                                    color: "white",
+                                  },
+                                },
+                                [_vm._v("名称")]
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
