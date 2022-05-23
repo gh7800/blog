@@ -42,31 +42,18 @@ export default {
             param.append('password',this.loginForm.password);
 
             this.$axios.post('/api/login', this.loginForm).then(response => {
-                console.log(response.data)
-                // alert(response.data.message)
-                // this.$router.replace('authuserinfo')
+                // console.log(response.data)
+                $data = response.data;
+                if($data.success) {
+                    this.$message.success($data.message)
+                    this.$router.replace('home')
+                }else{
+                    this.$message.error($data.message)
+                }
             }).catch(error => {
                 //console.log(error.data.message)
-                // alert(error.data.message)
+                alert(error.data.message)
             })
-
-            // this.loading = false
-            // this.$store.dispatch('login/login', this.loginForm)
-            //     .then(res => {
-            //         this.loading = true
-            //         console.log(res)
-            //         if (res.success) {
-            //             this.$message.success('登录成功')
-            //             const name = this.$store.getters.getUser
-            //             console.log("----" + name)
-            //             this.$router.replace('Home')
-            //         } else {
-            //             this.$message.error(res.message)
-            //         }
-            //     })
-            //     .catch(error => {
-            //         console.log(error)
-            //     })
         }
     }
 }
@@ -98,35 +85,3 @@ export default {
     width: 300px;
 }
 </style>
-<!--<template>-->
-<!--    <div >-->
-<!--        <div class="">vue login</div>-->
-<!--        <el-button>login-&#45;&#45;</el-button>-->
-<!--        <router-link to="/authuserinfo">info</router-link>-->
-<!--    </div>-->
-<!--</template>-->
-
-<!--<script>-->
-<!--export default {-->
-<!--    name: 'Login',-->
-<!--    data() {-->
-<!--        return {-->
-<!--            phone: ''-->
-<!--        }-->
-<!--    },-->
-<!--    mounted() {-->
-<!--        //this.getResult()-->
-<!--    },-->
-<!--    methods: {-->
-<!--        getResult() {-->
-<!--            const phone = this.$route.params.phone;-->
-<!--            this.$axios.post('/api/login').then(response => {-->
-<!--                console.log(response)-->
-<!--            }).catch(error => {-->
-<!--                console.log(error)-->
-
-<!--            })-->
-<!--        }-->
-<!--    }-->
-<!--}-->
-<!--</script>-->

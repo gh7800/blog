@@ -45,21 +45,21 @@
 <script>
     // console.log($.fn.jquery)
     function deleteUser(obj,id) {
-        layer.confirm('确定要删除吗', {
-            btn: ['确定', '取消']
-        }, function () {
+        // layer.confirm('确定要删除吗', {
+        //     btn: ['确定', '取消']
+        // }, function () {
             $.get('/user/del/' + id, function (data) {
                 console.log(data)
                 if(data.status === 0){
                     $(obj).parents('tr').remove();//移除行
-                    layer.msg(data.message,{icon:1})
+                    // layer.msg(data.message,{icon:1})
                 }else{
-                    layer.msg(data.message,{icon:6})
+                    // layer.msg(data.message,{icon:6})
                 }
             })
-        }, function () {
-            console.log('取消')
-        })
+        // }, function () {
+        //     console.log('取消')
+        // })
     }
 </script>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Utils\EncryptionTool;
 
 class UserController extends Controller
 {
@@ -61,6 +62,11 @@ class UserController extends Controller
 //        dd($request);
         $input = $request->except('_token');
         //$input['password'] = md5($input['password']);
+
+        $encry = new EncryptionTool();
+        $input['password'] = $encry->authCode($input['password'],'ENCODE','shine',100000);
+
+//        echo $encry->authCode($input['password'],'DECODE','shine',0);
 
         $request = User::create($input);
         if($request){

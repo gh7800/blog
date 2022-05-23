@@ -44,7 +44,7 @@ Route::get('user/del/{id}',[UserController::class,'del']);
 Route::post('user/loginStore',[UserController::class,'loginStore']);
 
 //首页
-Route::get('home',[HomeController::class,'homePage']);
+//Route::get('home',[HomeController::class,'homePage']);
 
 //index
 Route::view('/index','index');
